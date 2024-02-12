@@ -57,5 +57,7 @@ namespace ConsoleGame
                 throw new ArgumentException("New position cannot be outside of a map");
             }
         }
+
+        protected abstract void SetInitialPosition(char[][] map);
     }
 }
