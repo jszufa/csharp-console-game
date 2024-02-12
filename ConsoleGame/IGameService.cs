@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    public static class Class1
+    internal interface IGameService
     {
-
-        public static void Printer()
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        void save(GameState gameState);
+        GameState load();
     }
 }

@@ -8,8 +8,21 @@ namespace ConsoleGame
 {
     internal class Coordinates
     {
+        //pola są domyślnie private
         int x;
         int y;
+
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public int Y 
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
 
         public Coordinates(int x, int y)
         {
