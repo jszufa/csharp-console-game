@@ -5,7 +5,7 @@ using ConsoleGame.World;
 
 namespace ConsoleGame.States
 {
-    internal class GameState
+    public class GameState
     {
         int _levelCount;
         int _actualLevelNum;
@@ -21,7 +21,7 @@ namespace ConsoleGame.States
             this._level = new SimpleLevel(actualLevel);
         }
 
-        class SimpleLevel
+        public class SimpleLevel
         {
             public string Label;
             public SimpleEntity Hero;
@@ -42,7 +42,7 @@ namespace ConsoleGame.States
             }
         }
 
-        class SimpleEntity
+        public class SimpleEntity
         {
             public Coordinates Position;
             public Coordinates InitialPosition;

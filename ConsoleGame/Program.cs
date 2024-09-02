@@ -1,17 +1,18 @@
-﻿using ConsoleGame.Helpers;
+﻿using ConsoleGame.GameLoop;
+using ConsoleGame.Helpers;
+using ConsoleGame.Interfaces;
 
 namespace ConsoleGame;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-
-        //testing
-        var console = new ConsoleHandlerImpl();
-        console.DisplayOutputLn("Siemanko!");
-        var input = console.ReadInput();
-        console.DisplayOutputLn(input);
+        ILevelFactory defaultLevelFactory = new DefaultLevelFactory();
+        IConsoleHandler console = new ConsoleHandlerImpl();
+        IMapService mapService = new MapService(console);
+        IGameService gameService = new GameService();
+        Game game = new Game(3, 8, console, mapService, defaultLevelFactory, gameService);
+        game.Start();
     }
 }

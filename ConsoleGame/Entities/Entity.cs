@@ -7,7 +7,7 @@ namespace ConsoleGame.Entities
     {
         public Random generator = new Random();
         public Coordinates Position = new Coordinates(0, 0);
-        public Coordinates initialPosition;
+        public Coordinates InitialPosition;
         char _symbol;
         public char Symbol
         {
@@ -25,7 +25,7 @@ namespace ConsoleGame.Entities
         {
             _symbol = loadedEntity.Symbol;
             Position = loadedEntity.Position;
-            initialPosition = loadedEntity.InitialPosition;
+            InitialPosition = loadedEntity.InitialPosition;
             this.NewPosition(map, Position, _symbol);
         }
 
