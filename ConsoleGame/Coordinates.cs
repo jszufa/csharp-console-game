@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    internal class Coordinates(int x, int y)
+    public class Coordinates(int x, int y)
     {
         //C# oferuje automatyczne właściwości (ang. auto-implemented properties), które upraszczają kod, gdy potrzebuję tylko prostego dostępu do pola bez dodatkowej logiki.
         public int X { get; set; } = x;

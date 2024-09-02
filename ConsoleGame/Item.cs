@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    internal abstract class Item : IItem
+    public abstract class Item : IItem
     {
         public Coordinates CheckRoad(char command, Coordinates position)
         {
@@ -15,10 +15,10 @@ namespace ConsoleGame
 
             switch (command)
             {
-                case 'w': 
+                case 'w':
                     tempX -= 1;
                     break;
-                case 's': 
+                case 's':
                     tempX += 1;
                     break;
                 case 'a':
@@ -27,9 +27,10 @@ namespace ConsoleGame
                 case 'd':
                     tempY += 1;
                     break;
-                default: {
-                        throw new ArgumentException("Invalid command passed to checkRoad method");
-                    }
+                default:
+                {
+                    throw new ArgumentException("Invalid command passed to checkRoad method");
+                }
             }
 
             if (tempX < 0 || tempY < 0) return position;
@@ -37,18 +38,18 @@ namespace ConsoleGame
             return new Coordinates(tempX, tempY);
         }
 
-        public void ClearPosition(char[][] map, Coordinates position)
+        public void ClearPosition(char[,] map, Coordinates position)
         {
             ValidatePosition(map, position);
-            map[position.X][position.Y] = ' ';
+            map[position.X, position.Y] = ' ';
         }
 
-        public void NewPosition(char[][] map, Coordinates position, char symbol)
+        public void NewPosition(char[,] map, Coordinates position, char symbol)
         {
             ValidatePosition(map, position);
-            map[position.X][position.Y] = symbol;
+            map[position.X, position.Y] = symbol;
         }
-        static void ValidatePosition(char[][] map, Coordinates position)
+        static void ValidatePosition(char[,] map, Coordinates position)
         {
             var numRows = map.Length;
             var numCols = map[0].Length;

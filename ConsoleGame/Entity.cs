@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    internal class Entity : Item
+    public class Entity : Item
     {
-        Random generator = new Random();
+        public Random generator = new Random();
         public Coordinates Position = new Coordinates(0, 0);
-        Coordinates initialPosition;
+        protected Coordinates initialPosition;
         char _symbol;
         public char Symbol
         {
@@ -19,13 +19,13 @@ namespace ConsoleGame
             set => _symbol = value;
         }
 
-        public Entity(char[][] map, char initialSymbol)
+        public Entity(char[,] map, char initialSymbol)
         {
             _symbol = initialSymbol;
             SetInitialPosition(map);
         }
 
-        public Entity(GameState.SimpleEntity loadedEntity, char[][] map)
+        public Entity(GameState.SimpleEntity loadedEntity, char[,] map)
         {
             _symbol = loadedEntity.Symbol;
             Position = loadedEntity.Position;
@@ -34,7 +34,7 @@ namespace ConsoleGame
         }
 
         
-    protected override void SetInitialPosition(char[][] map)
+    protected override void SetInitialPosition(char[,] map)
         {
             var height = map.Length;
 
@@ -64,26 +64,26 @@ namespace ConsoleGame
                 Position.Y = colIndex;
 
                 //check if the place is free
-                if (map[Position.X][Position.Y] == ' ' || map[Position.X][Position.Y] == '\0')
+                if (map[Position.X, Position.Y] == ' ' || map[Position.X, Position.Y] == '\0')
                 {
                     break;
                 }
             }
 
             //throw exception if the place is not free after n (maxAttempts) attempts
-            if (map[Position.X][Position.Y] != ' ' && map[Position.X][Position.Y] != '\0')
+            if (map[Position.X, Position.Y] != ' ' && map[Position.X, Position.Y] != '\0')
             {
                 throw new InvalidOperationException("Unable to find a free position after" + maxAttempts + " attempts");
             }
 
             //place token's symbol on the free position and remember it
-            map[Position.X][Position.Y] = _symbol;
+            map[Position.X, Position.Y] = _symbol;
             this.initialPosition = new Coordinates(Position.X, Position.Y);
 
         }
 
 
-        public void Move(char command, char[][] map)
+        public void Move(char command, char[,] map)
         {
             this.ClearPosition(map, Position);
 
