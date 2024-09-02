@@ -6,7 +6,7 @@ public class Game {
     IMapService _mapService;
     ILevelFactory _levelFactory;
     bool _victory = false;
-    bool _gameOver = false;
+    public bool gameOver = false;
     int _levelCount;
     int _mapHeight;
 
@@ -24,7 +24,7 @@ public class Game {
         //game loop
         outerLoop:
         for (int i = 1; i <= _levelCount; i++) {
-            Level actualLevel = _levelFactory.createLevel("Level" + i, _mapHeight);
+            Level actualLevel = _levelFactory.CreateLevel("Level" + i, _mapHeight);
 
             while (true) {
                 ClearConsole();

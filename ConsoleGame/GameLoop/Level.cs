@@ -7,14 +7,14 @@ namespace ConsoleGame.GameLoop
     public class Level
     {
         internal string label;
-        char[][] map;
+        public char[,] map;
         internal Walls walls;
         internal Entity hero;
         internal Entity stone;
         internal Entity hole;
         internal Entity trap;
 
-        bool completed = false;
+        public bool completed = false;
 
         public Level(string label, int mapHeight)
         {
