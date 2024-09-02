@@ -6,35 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    internal class Coordinates
+    internal class Coordinates(int x, int y)
     {
-        //pola są domyślnie private
-        int x;
-        int y;
+        //C# oferuje automatyczne właściwości (ang. auto-implemented properties), które upraszczają kod, gdy potrzebuję tylko prostego dostępu do pola bez dodatkowej logiki.
+        public int X { get; set; } = x;
 
-        public int X
-        {
-            get { return x; }
-            set { x = value; }
-        }
-        public int Y 
-        {
-            get { return y; }
-            set { y = value; }
-        }
+        public int Y { get; set; } = y;
 
 
-        public Coordinates(int x, int y)
+        //copy constructor -Dwukropek (:) po nazwie konstruktora oznacza wywołanie innego konstruktora tej samej klasy przed wykonaniem ciała bieżącego konstruktora.
+        public Coordinates(Coordinates coordinatesToCopy) : this(coordinatesToCopy.X, coordinatesToCopy.Y)
         {
-            this.x = x;
-            this.y = y;
-        }
-
-        //copy constructor
-        public Coordinates(Coordinates coordinatesToCopy)
-        {
-            x = coordinatesToCopy.x;
-            y = coordinatesToCopy.y;
         }
     }
 }

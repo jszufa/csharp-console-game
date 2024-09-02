@@ -8,7 +8,7 @@ namespace ConsoleGame
 {
     internal interface IGameService
     {
-        void save(GameState gameState);
-        GameState load();
+        void Save(GameState gameState);
+        GameState Load();
     }
 }

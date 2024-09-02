@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    internal interface IConsoleHandler
+    public interface IConsoleHandler
     {
         string ReadInput();
 

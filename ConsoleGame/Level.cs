@@ -8,15 +8,15 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleGame
 {
-    internal class Level
+    public class Level
     {
-        string label;
+        internal string label;
         char[][] map;
-        Walls walls;
-        Entity hero;
-        Entity stone;
-        Entity hole;
-        Entity trap;
+        internal Walls walls;
+        internal Entity hero;
+        internal Entity stone;
+        internal Entity hole;
+        internal Entity trap;
 
         bool completed = false;
 
@@ -52,11 +52,11 @@ namespace ConsoleGame
 
             foreach (Entity entity in entities)
             {
-                entity.clearPosition(map, entity.position);
+                entity.clearPosition(map, entity.Position);
                 //assigns values (not the reference)
-                entity.position.x = entity.initialPosition.x;
-                entity.position.y = entity.initialPosition.y;
-                entity.newPosition(map, entity.position, entity.symbol);
+                entity.Position.x = entity.initialPosition.x;
+                entity.Position.y = entity.initialPosition.y;
+                entity.newPosition(map, entity.Position, entity.symbol);
             }
 
             //póki co pozycja walls się nie zmienia, więc nie trzeba ich resetować

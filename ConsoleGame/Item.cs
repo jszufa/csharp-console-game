@@ -10,8 +10,8 @@ namespace ConsoleGame
     {
         public Coordinates CheckRoad(char command, Coordinates position)
         {
-            int tempX = position.X;
-            int tempY = position.Y;
+            var tempX = position.X;
+            var tempY = position.Y;
 
             switch (command)
             {
@@ -50,8 +50,8 @@ namespace ConsoleGame
         }
         static void ValidatePosition(char[][] map, Coordinates position)
         {
-            int numRows = map.Length;
-            int numCols = map[0].Length;
+            var numRows = map.Length;
+            var numCols = map[0].Length;
             if (position.X > numRows || position.Y > numCols || position.X < 0 || position.Y < 0)
             {
                 throw new ArgumentException("New position cannot be outside of a map");

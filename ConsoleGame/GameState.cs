@@ -9,68 +9,68 @@ namespace ConsoleGame
 {
     internal class GameState
     {
-        int levelCount;
-        int actualLevelNum;
-        int mapHeight;
-        SimpleLevel level;
+        int _levelCount;
+        int _actualLevelNum;
+        int _mapHeight;
+        SimpleLevel _level;
 
         public GameState(Game game, Level actualLevel)
         {
 
-            this.levelCount = game.levelCount;
-            this.actualLevelNum = game.actualLevelNum;
-            this.mapHeight = game.mapHeight;
-            this.level = new SimpleLevel(actualLevel);
+            this._levelCount = game._levelCount;
+            this._actualLevelNum = game.actualLevelNum;
+            this._mapHeight = game._mapHeight;
+            this._level = new SimpleLevel(actualLevel);
         }
 
         class SimpleLevel
         {
-            public string label;
-            public SimpleEntity hero;
-            public SimpleEntity stone;
-            public SimpleEntity hole;
-            public SimpleEntity trap;
-            public SimpleWalls walls;
+            public string Label;
+            public SimpleEntity Hero;
+            public SimpleEntity Stone;
+            public SimpleEntity Hole;
+            public SimpleEntity Trap;
+            public SimpleWalls Walls;
 
 
             public SimpleLevel(Level level)
             {
-                this.label = level.label;
-                this.hero = new SimpleEntity(level.hero);
-                this.stone = new SimpleEntity(level.stone);
-                this.hole = new SimpleEntity(level.hole);
-                this.trap = new SimpleEntity(level.trap);
-                this.walls = new SimpleWalls(level.walls);
+                this.Label = level.label;
+                this.Hero = new SimpleEntity(level.hero);
+                this.Stone = new SimpleEntity(level.stone);
+                this.Hole = new SimpleEntity(level.hole);
+                this.Trap = new SimpleEntity(level.trap);
+                this.Walls = new SimpleWalls(level.walls);
             }
         }
 
         class SimpleEntity
         {
-            public Coordinates position;
-            public Coordinates initialPosition;
-            public char symbol;
+            public Coordinates Position;
+            public Coordinates InitialPosition;
+            public char Symbol;
 
             public SimpleEntity(Entity entity)
             {
-                this.position = entity.position;
-                this.initialPosition = entity.initialPosition;
-                this.symbol = entity.symbol;
+                this.Position = entity.Position;
+                this.InitialPosition = entity.initialPosition;
+                this.Symbol = entity.symbol;
             }
         }
 
         class SimpleWalls
         {
-            public Coordinates[] positions;
-            public Coordinates[] initialPositions;
-            public char symbol;
-            public int randomWallsNumber;
+            public Coordinates[] Positions;
+            public Coordinates[] InitialPositions;
+            public char Symbol;
+            public int RandomWallsNumber;
 
             public SimpleWalls(Walls walls)
             {
-                this.positions = walls.positions;
-                this.initialPositions = walls.initialPositions;
-                this.symbol = walls.symbol;
-                this.randomWallsNumber = walls.randomWallsNumber;
+                this.Positions = walls.positions;
+                this.InitialPositions = walls.initialPositions;
+                this.Symbol = walls.symbol;
+                this.RandomWallsNumber = walls.randomWallsNumber;
             }
         }
     }

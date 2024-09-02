@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleGame
 {
-    internal interface IMapService
+    public interface IMapService
     {
         public void HandleCommand(string input, Level level, Game game);
         public void PrintControlsMessage();

@@ -1,4 +1,4 @@
-﻿using ConsoleGame;
+﻿namespace ConsoleGame;
 
 internal class Program
 {

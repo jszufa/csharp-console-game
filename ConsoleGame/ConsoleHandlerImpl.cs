@@ -25,7 +25,7 @@ namespace ConsoleGame
 
         public string ReadInput()
         {
-            string? input = Console.ReadLine();
+            var input = Console.ReadLine();
             return input ?? "";
         }
     }
