@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsoleGame.Helpers;
+using ConsoleGame.States;
 
-namespace ConsoleGame
+namespace ConsoleGame.Entities
 {
     public class Entity : Item
     {
         public Random generator = new Random();
         public Coordinates Position = new Coordinates(0, 0);
-        protected Coordinates initialPosition;
+        public Coordinates initialPosition;
         char _symbol;
         public char Symbol
         {

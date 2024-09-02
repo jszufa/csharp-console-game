@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsoleGame.Entities;
+using ConsoleGame.GameLoop;
+using ConsoleGame.Helpers;
+using ConsoleGame.World;
 
-namespace ConsoleGame
+namespace ConsoleGame.States
 {
     internal class GameState
     {
@@ -67,7 +65,7 @@ namespace ConsoleGame
 
             public SimpleWalls(Walls walls)
             {
-                this.Positions = walls.positions;
+                this.Positions = walls.Positions;
                 this.InitialPositions = walls.initialPositions;
                 this.Symbol = walls.symbol;
                 this.RandomWallsNumber = walls.randomWallsNumber;

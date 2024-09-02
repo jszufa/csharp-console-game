@@ -1,4 +1,6 @@
-﻿namespace ConsoleGame;
+﻿using ConsoleGame.Helpers;
+
+namespace ConsoleGame;
 
 internal class Program
 {

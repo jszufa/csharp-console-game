@@ -1,3 +1,5 @@
+using ConsoleGame.Helpers;
+
 namespace ConsoleGame.Entities;
 
 public class Wall(char[,] map, char initialSymbol) : Entity(map, initialSymbol)

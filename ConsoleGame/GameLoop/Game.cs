@@ -1,4 +1,6 @@
-namespace ConsoleGame;
+using ConsoleGame.Interfaces;
+
+namespace ConsoleGame.GameLoop;
 public class Game {
     IConsoleHandler _console;
     IMapService _mapService;
